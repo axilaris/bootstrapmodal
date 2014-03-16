@@ -11,6 +11,49 @@
     </div>
   <% end %>
 
+
+	<div id="windowCreateInvoiceProductDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
+				<div class="modal-header">
+					<a href="#" class="close" data-dismiss="modal">&times;</a>
+					<h3>Please enter a new product</h3>
+					</div>
+				<div class="modal-body">
+					<div class="divDialogElements">
+						Code:<input class="xlarge" id="xlInput" name="modal_code" type="text" />
+						<br>
+						Name:<input class="xlarge" id="xlInput" name="modal_name" type="text" />
+						<br>
+						Description:<input class="xlarge" id="xlInput" name="modal_desc" type="text" />
+						<br>
+						Price:<input class="xlarge" id="xlInput" name="modal_price" type="text" />
+						</div>
+					</div>
+				<div class="modal-footer">
+					<a href="#" class="btn" data-dismiss="modal">Cancel</a>
+					<a href="#" class="btn btn-primary" onclick="okClicked ();">OK</a>
+				</div>
+		</div>
+			<div class="divButtons">
+				<a data-toggle="modal" href="#windowCreateInvoiceProductDialog" class="btn btn-primary btn-large">Test Modal Button</a>
+				</div>			
+
+		<script>
+			$(document).ready(function() {
+				$('#windowCreateInvoiceProductDialog').bind('show', function () {
+				//	document.getElementById ("xlInput").value = document.title;
+					});
+				});
+			function okClicked () {
+				$('#windowCreateInvoiceProductDialog').modal('hide'); 
+			//	document.title = document.getElementById ("xlInput").value;
+			//	closeDialog ();
+				};
+				
+				
+			</script>
+
+
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
