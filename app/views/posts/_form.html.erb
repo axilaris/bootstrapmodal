@@ -12,7 +12,7 @@
   <% end %>
 
 
-	<div id="windowCreateInvoiceProductDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
+	<div id="windowCreateInvoiceProductDialog" class="modal hide fade" tabindex="-1">
 				<div class="modal-header">
 					<a href="#" class="close" data-dismiss="modal">&times;</a>
 					<h3>Please enter a new product</h3>
@@ -30,7 +30,9 @@
 					</div>
 				<div class="modal-footer">
 					<a href="#" class="btn" data-dismiss="modal">Cancel</a>
-					<a href="#" class="btn btn-primary" onclick="okClicked ();">OK</a>
+					<a href="#" class="btn btn-primary" >OK</a>
+					<button type="button" class="btn btn-primary" onclick="okClicked ();">Save changes</button>
+	
 				</div>
 		</div>
 			<div class="divButtons">
@@ -38,16 +40,18 @@
 				</div>			
 
 		<script>
-			$(document).ready(function() {
-				$('#windowCreateInvoiceProductDialog').bind('show', function () {
-				//	document.getElementById ("xlInput").value = document.title;
-					});
-				});
+
 			function okClicked () {
+				console.log("okClicked");
 				$('#windowCreateInvoiceProductDialog').modal('hide'); 
 			//	document.title = document.getElementById ("xlInput").value;
-			//	closeDialog ();
+ 				$("#post_name").val('insert new value');
 				};
+			
+			$('#windowCreateInvoiceProductDialog').on('hidden.bs.modal', function (e) {
+ 				 	console.log("hidden");
+				})
+			
 				
 				
 			</script>
