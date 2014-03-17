@@ -45,17 +45,40 @@
 			$('#windowCreateInvoiceProductDialog').on('hidden.bs.modal', function (e) {
  				 	console.log("hidden");
 				})
-			
-				
-				
+
+			$('select').selectpicker();
 			</script>
 
 
   <br><br>
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name%>
+    <%= select_tag(:option, 
+    	options_for_select([['All', 1], ['Co', 2], ['Bought', 3], ['View', 4], ['Top API', 5]] ) ) %>
   </div>
+  
+  <div class="bs-docs-example">
+  <select class="selectpicker" data-live-search="true">
+    <option>Hot Dog, Fries and a Soda</option>
+    <option>Burger, Shake and a Smile</option>
+    <option>Sugar, Spice and all things nice</option>
+  </select>
+</div>
+
+<select 
+    class="form-control selectpicker" 
+    data-container="body" 
+    data-live-search="true">        
+    <option value="1">Option 1</option>
+	<option value="2">Option 2</option>
+	<option value="3">Option 3</option>
+	<option value="4">Option 4</option>
+    <option value="5">Option 5</option>								
+</select>
+  
+  
+  
   <div class="actions">
     <%= f.submit :class => "btn btn-primary" %>
   </div>

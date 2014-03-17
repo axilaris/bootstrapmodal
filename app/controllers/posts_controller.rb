@@ -14,11 +14,16 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    @array_list = [{"id" => "1", "name" => "John"}, {"id" => "2", "name" => "Tom"}]
+    
     @post = Post.new
   end
 
   # GET /posts/1/edit
   def edit
+    
+    @array_list = [{"id" => "1", "name" => "John"}, {"id" => "2", "name" => "Tom"}]
+    
   end
 
   # POST /posts
